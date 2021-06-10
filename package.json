@@ -1,0 +1,36 @@
+{
+  "name": "studbud",
+  "version": "1.0.0",
+  "description": "A useful study tool for students",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "prestart": "parcel build ./public/index.html",
+    "dev": "parcel serve ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IcyPenguinoz/studbud.git"
+  },
+  "keywords": [
+    "Study",
+    "online",
+    "help"
+  ],
+  "author": "Jason Thai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IcyPenguinoz/studbud/issues"
+  },
+  "homepage": "https://github.com/IcyPenguinoz/studbud#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "autoprefixer": "^10.2.5",
+    "parcel": "^2.0.0-beta.2",
+    "postcss": "^8.2.14"
+  }
+}
