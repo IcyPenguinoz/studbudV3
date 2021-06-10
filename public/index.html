@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studbud</title>
+    <link rel = "stylesheet" href = "fontawesome/css/all.min.css">
+    <link rel = "stylesheet" href = "fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="jkanban/dist/jkanban.min.css"> 
+    <link rel="shortcut icon" type="image/png" href="./img/favicon-32x32.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="jkanban/dist/jkanban.min.js"></script>
+    <link href = "./scss/main.scss" rel = "stylesheet" type = "text/css">
+</head>
+
+<body class = "app-container">
+
+    <nav class = "top-nav"> 
+        <h2 class = "logo-text"> Studbud</h2>   
+        <ul class = "nav-links">
+            <li class = "nav-item"> <a href = "#home" class = "active"> 
+            <i class="fas fa-home fa-fw"> </i> <span class = "title"> Home </span> </a> </li>
+            <li class = "nav-item"> <a href = "#page1"> 
+            <i class="fas fa-tasks fa-fw"></i> <span class = "title">Task  </span> </a> </li>
+            <li class = "nav-item"> <a href = "#page2"> 
+            <i class="fas fa-clock fa-fw"></i> <span class = "title"> Time </span></a> </li>
+            <li class = "nav-item"> <a href = "#page3"> 
+            <i class="fas fa-pencil-ruler fa-fw"></i> <span class = "title"> Content </span> </a> </li>
+            <li class = "nav-item"> <a href = "#page4">
+            <i class="fas fa-music fa-fw"></i> <span class = "title"> Music </span> </a> </li>
+        </ul>
+    </nav>
+
+    <div id = "home" class = "page-container">
+        <div class = "Home-Page-Container"> 
+            <h1 class = "Home-Title"> Studbud</h1>
+            <br>
+            <p class = "Home-Quote"> <span> "A study session app" </span> </p>
+            <br>
+            <div class = "Home-Body-Text">
+                <p>Struggling to properly get your study sessions in check? Well Studbud - the study session web app is here to help! 
+                    Studbud provides help in 3 main areas: </p>
+                
+                <br>
+                <ul>
+                    <li> Task Management: in terms of managing your university tasks, whereas it be note-taking, finishing assignments
+                        or taking exams!
+                    </li>
+                    <br>
+                    <li> Time Management: in terms of helping to get focused on doing those tasks - with the help of the simple timer
+                        and the Pomodoro timer!
+                    </li>
+                    <br>
+                    <li> Content Management: in terms of using simple yet effective acronym maker in helping to properly condense
+                        many terms and concepts into simple abbreviations!
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <button type = "button" class = "button"> Get Started!</button>
+        </div>
+    </div>
+
+    <div id ='page1' class = "page-container">
+        <div class = "top-text">
+            <div class = "top-text-title">
+                <h1>Task Management</h1>
+            </div>
+            <div class = "top-text-middle-line">
+            </div>
+            <div class = "top-text-paragraph">
+            <p> This is where you can manage your tasks via adding your own tasks and detailing them alongside being able to organise them
+                further by using the "Kanban Board" feature!</p>
+            </div>
+        </div>
+        <br>
+        <div class = "tabs">
+            <nav class = "sub-nav">
+                <ul class = "nav-links">
+                    <li class = "nav-item"> <a href = "#page1-1" class = "active">  <i class="fas fa-tasks fa-fw"></i> Task List</a></li>
+                    <li class = "nav-item"> <a href = "#page1-2"> <i class="fas fa-table fa-fw"></i> Kanban Board</a></li>
+                </ul>
+            </nav>
+            <br>
+            <div id = "page1-1" class = "sub-page-container"> 
+                <h2 class = taskDescription> Task Description </h2>
+                <div id = "task-box" style = "display: none;">
+                    <div> 
+                        <h1> Study for Exam</h1> 
+                        <hr/>
+                    </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                </div>
+                
+        
+
+                 <div id = "task-grid">
+                    <!--Tasklist Display-->
+                    <div id = "tasklist">
+                        <p id = "emptylist"> You have not added any tasks yet. Enter your tasks by clicking the "+" button!</p>
+                        <br>
+                        <ul>
+                            <div class = "task-list-box-container"> 
+                            </div>
+                        </ul>
+    
+                    <!--<div class = "add-Button">
+                        <button class = "buttonTag"><i class = "fas fa-plus"></i></button>
+                     </div> -->
+                    
+                     <div class = "add-Button">
+                        <button class = "buttonTag" id = "modal-btn"><i class = "fas fa-plus"></i></button>
+                     </div>
+                     
+    
+    
+                    </div>
+                    <div class = "modal-bg">
+                        <div class = "modal">
+                            <form id = "taskform">
+                                <h2> Enter your tasks here!</h2>
+                                <label for = "task">Task: </label>
+                                <input type = "text" name = "task" id = "taskInput"> </input>
+                                <br> 
+                            
+                                <!--- Date Input -->
+                                <label for = "dueDate"> Due Date: </label> 
+                                <input type = "date" name = "dueDate" id = "dueDateInput"> 
+                            
+                                <br>
+                            
+                            
+                                <!-- Time Input --> 
+                                <label for = "completionTime"> Completion Time: </label> 
+                                <input type = "time" name = "completionTime" id = "completionTimeInput"> 
+                            
+                                <br> 
+                                <label for = "estimatedTime"> Estimated completion time (in mins): </label>
+                                <input type = "number" name = "estimatedTime" id = "estimatedTimeInput">
+                            
+                                <br>
+                            
+                                <!-- Priority -->
+                                <label for = "priority"> Task Priority: </label>
+                                <select name = "priority" id = "priorityInput">
+                                    <option value = ""> Select one: </option>
+                                    <option value = "Low"> Low </option>
+                                    <option value = "Medium"> Medium </option>
+                                    <option value = "High"> High </option>
+                                </select>
+                                
+                                <br>
+                                <br>
+                                
+                                <!-- Submit Button -->
+                                <button class = "submitbutton" type = "submit" > Submit </button> 
+                        
+                                
+                            </form>
+                            <i id = "modal-close" class="far fa-window-close"></i>
+                            
+                        </div>
+                    </div>
+                 </div>
+            </div>
+    
+            <div id = "page1-2" class = "sub-page-container" style = "display: none;"> 
+                <div id="myKanban">
+                </div>
+                <!--Incorporation of jKanban element, NOTE: With new code - it recognises this as Kanban is defined
+                inside tasklist.js which is defined inside scripts.js-->
+                <script src="components/addKanbanBoard.js"></script>
+                <div class = "add-Button">
+                    <button class="buttonTag" id = "modal-btn2"><i class = "fas fa-plus"></i></button> <!--Button seems to open modal tab from 1st page-->
+                </div>
+
+                <div class = "modal-bg2">
+                    <div class = "modal2">
+                        <h3>Add your own custom columns here!</h3>
+                        <br>
+                        <form id = "addColumn">
+                            <label for = "columnName">Column Name:</label>
+                            <br>
+                            <input type = "text" id="kanbanColumnName">
+                            <br>
+                        </form>
+                        <button id= "addDefault" type = "submit">Submit</button> <!--Has to do with the button inside the form-->
+                        <i id = "modal-close2" class="far fa-window-close"></i>
+                            
+                    </div>
+                </div>
+                
+            </div>
+
+
+        </div>  
+        
+        <br>
+
+    </div>
+
+    <div id = 'page2' class = "page-container">
+        <div class = "top-text">
+            <div class = "top-text-title">
+                <h1> Time Management</h1>
+            </div>
+            <div class = "top-text-middle-line"></div>
+            <div class = "top-text-paragraph">
+                <p> This is where you can help to manage your time in doing those tasks - whether it be using the simple stop watch
+                    timer - or the Pomodoro timer for those intense sessions!
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class = "tabs">
+            <nav class = "sub-nav">
+                <ul class = "nav-links">
+                    <li class = "nav-item"> <a href = "#page2-1" class = "active"> <i class="fas fa-clock fa-fw"></i> Stopwatch Timer</a></li>
+                    <li class = "nav-item"> <a href = "#page2-2"> <i class="fas fa-hourglass-start fa-fw"></i>Pomodoro Timer</a></li>
+                </ul>
+            </nav>
+                <br>
+                <div id = "page2-1" class = "sub-page-container"> 
+                    <!--<h2 style = "display: none;"> Description3</h2> -->
+                    <div class = "timer-rectangle">
+                        <div class = "minutes">00</div>
+                        <div class = "minutes-dot">:</div>
+                        <div class = "seconds">00</div>
+                        <div class = "seconds-dot">:</div>
+                        <div class = "milliseconds">00</div>
+                    </div>
+                    <div class = "timer-buttons">
+                        <div class = "start">
+                            <button class = "start-button"> Start </button>
+                        </div>
+                        <div class = "reset">
+                            <button class = "reset-button"> Reset </button>
+                        </div>
+                        <div class = "stop"> 
+                            <button class = "stop-button">Stop  </button>
+                        </div>
+                    </div>
+                    <!--Link to stopwatch timer js file-->
+                    <script src = "components/stopwatch.js"></script>
+                </div>
+        
+                <div id = "page2-2" class = "sub-page-container" style = "display: none;"> 
+                    <div class = "pomodoro-container">
+                            <div class = "timer-rectangle2">
+                                <div class = "minutes2" id = "time-text" > </div>
+                            </div> 
+
+                        <div class = "timer2-buttons">
+                            <div class = "start">
+                                <button class = "start2-button"> Start </button>
+                            </div>
+                            <div class = "reset">
+                                <button class = "reset2-button"> Reset </button>
+                            </div>
+                            <div class = "stop"> 
+                                <button class = "stop2-button">Stop  </button>
+                            </div>
+                        </div>
+
+                        <div class = "pomodoro-togglemode">
+                            <button id="workBtn" class = "tile">Work Mode </button>
+                            <button id="shortBreakBtn" class = "tile">Short Break Time</button>
+                            <button id="longBreakBtn" class = "tile"> Long Break Time</button>
+                        </div>
+                    </div>
+
+                    <div class = "setting-Button">
+                        <button class="buttonTag" id = "modal-btn3"><i class = "fas fa-cogs"></i></button>
+                    </div>
+
+
+            
+
+                    <div class = "modal-bg3">
+                        <div class = "modal3">
+                            <div class = "pomodoro-sessions">
+                                <h2> Edit Pomodoro Sessions (in minutes): </h2> 
+                                <br>
+                                <form class = "pomodoro-form">
+                                    <div class = "pomodoro-label">
+                                        <label for="fname">Pomodoro Time:</label>
+                                        <input type="number" id="workTime" name="fname"><br> <!--workTime set accordingly to pomodoro js file-->
+                                    </div>
+        
+                                    <br>
+        
+                                    <label for="lname">Short Break:</label>
+                                    <input type="number" id= "breakTime" name="lname" > <br> <!--breakTime set accordingly to pomodoro js file-->
+        
+                                    <br>
+        
+                                    <label for="lname">Long Break:</label>
+                                    <input type="number" id="longbreakTime" name="lname"> <br>
+        
+                                    <br>
+        
+                                </form>
+        
+                                <br>
+        
+                                <button type = "submit" id ="updateBtn"  class = "pomodoro-done"> Done </button> 
+                            </div>
+                            <i id = "modal-close3" class="far fa-window-close"></i>
+                        </div>
+                    </div>
+                    <!--Ask if for pomodoro session text, should use grid or just style it using CSS-->
+                </div>
+        </div>
+
+
+        
+    </div>
+
+    <div id = 'page3' class = "page-container">
+        <div class = "top-text">
+            <div class = "top-text-title">
+                <h1> Content Management</h1>
+            </div>
+            <div class = "top-text-middle-line"></div>
+            <div class = "top-text-paragraph">
+                <p> This is where you can use the acronym maker in helping to condense those many phases and words you struggle to 
+                    remember - into simple abbreviations and phrases!
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class = "tabs">
+            <nav class = "sub-nav">
+                <ul class = "nav-links">
+                    <li class = "nav-item"> <a href = "#page3-1" class = "active"> <i class="fas fa-pencil-ruler fa-fw"></i> Acronym Maker</a></li>
+                    <li class = "nav-item"> <a href = "#page3-2"> <i class="fas fa-eye"></i> Acronym Viewer</a></li>
+                </ul>
+            </nav>
+            <br>
+            <div id = "page3-1" class = "sub-page-container"> 
+                <div class = "acronym-container">
+                    <div class = "acronym-text">
+                        <p> Enter in at least 3 words - seperated by a space! For example: cat dog chicken.</p>
+                    </div>
+                    <div class = "acronym-box">
+                        <div class = "acronym-box-text">
+                            <input id = "inputField" type = "text" placeholder = "Enter your words here"> 
+                            <button id = "generate"> Generate </button>
+                        </div>
+                        <div class = "acronym-generate-button">
+                        </div>
+                    </div>
+                    <div class = "acronym-bottom-text">
+                        <p>Then click generate to generate your acronym!</p>
+                        <br>
+                        <p id = "result"> </p>
+                    </div>
+                    
+                </div>
+            </div>
+                <div id = "page3-2" class = "sub-page-container" style = "display: none;">
+                    <h1 class = "acronym-title" style = "text-align: center"> Your Acronyms:</h1>
+                    <div id = acronymBoxContainer>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div id = 'page4' class = "page-container">
+        <h1 id = "musicTitle"> Music Player</h1>
+        <br>
+        <div class = "tabs">
+            <nav class = "sub-nav">
+                <ul class = "nav-links">
+                    <li class = "nav-item"> <a href = "#page4-1" class = "active"> <i class="fas fa-music fa-fw"></i> Music Player</a></li>
+                </ul>
+            </nav>
+            <div id = "page4-1" class = "sub-page-container"> 
+                <!-- Use of lofi playlist as a way to help during studying process - lofi music helps keep brain at focus-->
+                <div style="left: 0%; width: 100%; height: 80%; position: absolute;"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen allow="encrypted-media"></iframe></div>
+        </div>
+        
+
+    </div>
+
+    <script src = "scripts.js"></script>
+    <script src = "components/acronymMaker.js"></script>
+    <script src = "components/pomodoro-timer.js"></script>
+    <script src = "components/modal.js"></script>
+</body>
+
+
+</html> 

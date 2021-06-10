@@ -1,0 +1,1477 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.Home-Page-Container{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin: 0px 0px 0px 50px;
+
+}
+
+.logo-text{
+    text-align: center;
+    color: white;
+    margin-top: 1em;
+    padding-bottom: 1.5em;
+}
+
+.button{
+    background-color: #2EC4B6;
+    border: none;
+    color: white;
+    padding: 15px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    box-shadow: 0 0 20px 0px rgba(46,196,182,0.16);
+    margin: 4px 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.Home-Title{
+    font-size: 50px;
+}
+
+.Home-Quote{
+    font-size: 35px;
+    color: #004F2D;
+    position: relative;
+    font-weight: bold;
+
+}
+
+/* .Home-Quote:before{
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+}
+
+.Home-Quote:after{
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+}
+
+*/
+
+.Home-Quote span{
+    background-color: transparent;
+}
+
+.Home-Body-Text{    
+    font-size: 18px;
+}
+
+.Home-Body-Text ul{
+    list-style-position: inside;
+}
+
+.top-nav {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    background-color: #123;
+    .nav-links{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .nav-item a{
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 6.79vh 0;
+            text-align: center;
+            margin-bottom: 1px;
+
+            &:hover {
+                background: #E84855;
+                color: #fff;
+
+
+            }
+            &.active{
+                font-weight: bold;
+                background: red;
+
+            }
+
+        }
+    }
+    
+}
+
+.top-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    
+
+}
+
+.top-text-title{
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 1.17vw;
+
+    
+}
+
+/*Dot Test
+.top-text-title::before{
+    content: 'CAT';
+    display: block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5em;
+    background-color: black;
+    border-radius: 50%;
+
+
+}
+*/
+
+.top-text-middle-line{
+    border-left: 6px solid black;
+    margin: 0 auto;
+    width: 5%;
+    height: 6.63vh;
+    text-align: center;
+
+}
+/*     background: linear-gradient(#000, #000) no-repeat center/6px 100%; */
+
+.top-text-paragraph{
+    float:right;
+    font-size: 0.9vw;
+    width: 55%;
+
+}
+
+.tabs{
+    width: 100%;
+    height: 70vh;
+    background: #f9f9f9;
+    border-radius: 50px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+}
+
+.sub-nav{
+    width: 100%;
+    height: 15.9vh;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #123;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .nav-links{
+        list-style: none;
+        display: flex;
+        .nav-item a{
+            text-decoration: none;
+            color: white;
+            /*
+                Hover size defined by using padding - however need to ask how to make it responsive - not hard-coded
+                Based on auto-margin, get rid of paddings 
+                text-align: center
+                Could use something with flexbox to justify hover size
+            */
+            /*
+                CSS Grid for the bottom text from timer OR can try doing :before and :after 
+            */
+            /*
+                Music Player = iframe, not main priority
+            */
+            padding: 1.7em 7.965em;
+            font-size: 1.63vw;
+            white-space: nowrap;
+
+            &:hover {
+                background: #E84855;
+                border-top-left-radius: 50px;
+                border-top-right-radius: 50px;
+
+            }
+            &.active{
+                font-weight: bold;
+                background: red;
+                border-top-left-radius: 50px;
+                border-top-right-radius: 50px;
+
+
+            }
+
+        }
+    }
+    
+}
+
+.fa-fw{
+    margin-right: 2px;
+}
+
+.modal-bg{
+    margin: auto;
+    position:fixed;
+    width:100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, opacity 0,5s;
+}
+
+.bg-active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal{
+    position: relative;
+    margin: auto;
+    background-color: white;
+    width: 50%;
+    height: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modal-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+
+
+.modal-bg2{
+    margin: auto;
+    position:fixed;
+    width:100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, opacity 0,5s;
+}
+
+.bg-active2{
+    visibility: visible;
+    opacity: 1;
+}
+
+#addColumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal2{
+    position: relative;
+    margin: auto;
+    background-color: white;
+    width: 35%;
+    height: 35%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modal-close2{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+
+
+#kanbanColumnName{
+    width: 100%;
+}
+
+#addDefault{
+    margin-top: 20px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    height: 15%;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;  
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sub-page-container{
+    margin-left: 30px;
+}
+
+#tasklist{
+    height: 200px;
+    overflow-x: auto;
+}
+
+.task-list-box-container{
+    display: flex;
+    flex-direction: row;
+}   
+.task-list-boxes{
+    position: relative;
+    height: 150px;
+    background-color: #1B2A41;
+    color: white;
+    //margin-left: 10px;
+    margin-right: 10px;
+    //padding-top: 2px;
+    border-radius: 10px;
+    min-width: 250px;
+
+}
+
+.task-list-boxes h2{
+    font-size: 18px;
+    padding-left: 12px;
+    background-color: #1B2A41;
+}
+
+.task-list-boxes p{
+    font-size: 12px;
+    margin-top: 5px;
+    padding-left: 12px;
+}
+
+.task-list-boxes hr{
+    border: 0;  
+    height: 2px;
+    background: white;
+}
+
+.task-list-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.done-button{
+    color: white;
+    border: none;
+    border-radius: 50px;
+    background-color: green;
+    height: 30px;
+    width: 30%;
+    margin-right: 25px;
+    font-weight: bold;
+    font-size: 0.9vw;
+}
+
+.not-done-button{
+    color: white;
+    border: none;
+    height: 30px;
+    width: 30%;
+    border-radius: 50px;
+    background-color: red;
+    font-weight: bold;
+    font-size: 0.9vw;
+}
+
+
+#task-box{
+    display: flex;
+    flex-direction: row;
+}
+
+#task-box div{
+    width: 25%;
+    height: 150px;
+    background-color: red;
+    margin: 20px 40px;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.add-Button{
+    position: absolute;
+    bottom: 3.1rem;
+    right: 3.7rem;
+    border: none;
+    outline: none;
+}
+
+.add-Button .buttonTag{
+    width: 70px;
+    height: 70px;
+    border: none;
+    outline: none;
+    background-color: #2D936C;
+    border: none;
+    color: white;
+    padding: 15px 0px;
+    font-size: 25px;
+    box-shadow: 0 0 20px 0px rgba(46,196,182,0.16);
+    margin: 4px 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.setting-Button{
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    border: none;   
+    outline: none;
+}
+
+.setting-Button .buttonTag{
+    width: 80px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background-color: #2AB7CA;
+    border: none;
+    color: white;
+    padding: 15px 0px;
+    font-size: 28px;
+    box-shadow: 0 0 20px 0px rgba(46,196,182,0.16);
+    margin: 4px 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.timer-rectangle{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left:50%;
+    top:42.5%;
+    bottom: 100%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 30%;
+    background-image: linear-gradient(to bottom right, rgba(81,209,131,1), rgba(96,181,212,1));
+    box-shadow: 0 0 20px 0px rgba(46,196,182,0.16);
+    padding: 15px;
+    margin: 40px 2px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.timer-rectangle div{
+    color: white;
+    font-size: 5.2vw;
+    width: 15%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.timer-rectangle div:before
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 25%;
+    font-size: 1.3vw;
+    width: 14.5%;
+    text-align: center;
+}
+
+.timer-rectangle div.minutes:before
+{
+    content: 'MINUTES';
+    
+
+}
+
+
+.timer-rectangle div.seconds:before
+{
+    content: 'SECONDS';
+
+}
+
+
+.timer-rectangle div.milliseconds:before
+{
+    content: 'MILLISECONDS';
+    margin-right: 10px;
+
+}
+
+
+.timer-buttons{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    height: 25%;
+    bottom: 7%;
+    left: 22.5%;
+    text-align: center;
+}
+
+
+.start-button{
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50px;
+    height: 100%;
+    width: 70%;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.start-button:hover{
+    background-image: linear-gradient(to bottom right, rgba(81,209,131,1), rgba(96,181,212,1));
+}
+
+.reset-button{
+    border: none;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50px;
+    height: 100%;
+    width: 70%;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.stop-button{
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50px;
+    height: 100%;
+    width: 70%;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+
+
+.timer-buttons div{
+    float: left;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    
+}
+
+.pomodoro-timer-spacing{
+    padding-right: 500px;
+    background: red;
+}
+
+#myKanban{
+    //padding-right: 10px;
+    text-align: center;
+    overflow-x: auto;
+    font-size: 16px;
+    height: 100%;
+    width: 99%;
+    padding-top: 10px;
+}
+
+.success{background: #00B961; color:#fff}
+.info{background: #B20D30; color:#fff}
+.warning{background: #F4CE46; color:#fff}
+.error{background: #FB7D44; color:#fff}
+
+.timer-rectangle2{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //left:30%;
+    left:50%;
+    top:42.5%;
+    bottom: 100%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 30%;
+    background-image: linear-gradient(to bottom right, rgba(81,209,131,1), rgba(96,181,212,1));
+    box-shadow: 0 0 20px 0px rgba(46,196,182,0.16);
+    padding: 15px;
+    margin: 40px 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.timer-rectangle2 div{
+    color: white;
+    font-size: 5.8vw;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.timer-rectangle2 div:before
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 18.5%;
+    font-size: 1.5vw;
+    width: 13.5%;
+    text-align: center;
+}
+
+.timer-rectangle2 div:after
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute; 
+    bottom: 18.5%;
+    font-size: 1.5vw;
+    width: 52.5%;
+    text-align: center;
+}
+
+
+.timer-rectangle2 div.minutes2:before
+{
+    content: 'MINUTES';
+
+}
+
+.timer-rectangle2 div.minutes2:after
+{
+    content: 'SECONDS';
+}
+
+
+.timer-rectangle2 div.seconds2:before
+{
+    content: 'SECONDS';
+    margin-right: 10px;
+
+}
+
+.timer2-buttons{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 25%;
+    bottom: 7.5%;
+    //left: 2%;
+    left: 20%;
+    text-align: center;
+}
+
+.pomodoro-togglemode{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 0%;
+    top: 47.5%;
+    //left: 58.5%;
+    left: 78%;
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+.modal-bg3{
+    margin: auto;
+    position:fixed;
+    width:100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 1;
+    transition: visibility 0s, opacity 0,5s;
+}
+
+.bg-active3{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal3{
+    position: relative;
+    margin: auto;
+    background-color: white;
+    width: 35%;
+    height: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modal-close3{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+
+#workBtn{
+    border: none;
+    background-image: linear-gradient(to bottom right, rgba(81,209,131,1), rgba(96,181,212,1));
+    color: white;
+    width: 70%;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    height: 200px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#shortBreakBtn{
+    border: none;
+    background-image: linear-gradient(red, yellow);
+    color: white;
+    width: 70%;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    height: 200px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#longBreakBtn{
+        border: none;
+        background: rgb(131,58,180);
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        color: white;
+        width: 70%;
+        padding: 20px 10px;
+        font-weight: bold;
+        height: 200px;
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 20px;
+}
+
+.start2-button{
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50px;
+    height: 100%;
+    width: 70%;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.reset2-button{
+    border: none;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50px;
+    height: 100%;
+    width: 70%;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+.stop2-button{
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50px;
+    height: 100%;
+    width: 70%;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+
+.timer2-buttons div{
+    float: left;
+    text-align: center;
+    width: 30%;
+    font-size: 40px;
+}
+
+.pomodoro-container{
+    margin-left: 500px;
+}
+
+.pomodoro-sessions{ //Currently not responsive - ask about how to make it proper; can do modal tab for phone versions for responsiveness
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    //right: 8%;
+    float: right;
+    //border-left: black solid 4px;
+    padding-left: 2rem;
+    position: absolute;
+    //bottom: 0;
+    //right: 0;
+    //width: 26.5%;
+    //top: 22.5%;
+    //overflow-x: scroll;
+}
+
+.pomodoro-sessions h2{
+    padding-top: 20px;
+    font-size: 17px;
+}
+
+
+.pomodoro-form input{
+    margin-left: 10px;
+    padding-left: 10px;
+    height: 30px;
+    width: 40%;
+    font-size: 16px;
+    background-color:#d3d3d3;
+    border: none;
+    
+}
+
+
+/*border-left: black solid 4px;
+padding-left: 2rem;
+position: absolute;
+bottom: 0;
+right: 0;
+width: 30%;
+top: 24%;
+*/
+
+.pomodoro-done{
+    border-radius: 50px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: #ffffff;
+    height: 50px;
+    width: 90%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold; 
+    cursor: pointer;
+
+}
+
+
+.acronym-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.acronym-text{
+    margin-top: 30px;
+    position: absolute;
+    text-align: center;
+}
+
+.acronym-box-text{
+    position: absolute;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    left:50%;
+    top:45%;
+    bottom: 100%;
+    width: 60%;
+    height: 10%;
+    transform: translate(-50%,-50%);
+    background-image: linear-gradient(to bottom right, rgba(81,209,131,1), rgba(96,181,212,1));
+    box-shadow: 0 0 20px 0px rgba(46,196,182,0.16);
+    color: white;
+    padding: 15px;
+    margin: 50px 2px;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+#acronymBoxContainer{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 99%;
+    overflow-x: auto;
+}
+
+#acronymBoxContainer h2{
+    text-align: center;
+    border-bottom: 3px solid white;
+    font-size: 25px;
+    background: #FF033E;
+}
+
+#acronymBoxContainer div{
+    height: 200px;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+#acronymBoxContainer p{
+    font-size: 20px;
+}
+
+#inputField{
+    border-style: none;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    right: 30%;
+    padding-left: 10px;
+    font-size: 30px;
+}
+
+.capitalize{
+    text-transform: capitalize;   
+}
+
+#generate{
+    border-style: none;
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    left: 70%;
+    padding-left: 5px;
+    font-size: 1.953125vw;
+    background-image: linear-gradient(to bottom right, rgba(81,209,131,1), rgba(96,181,212,1));
+    box-shadow: 0 0 20px 0px rgba(46,196,182,0.16);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.acronym-bottom-text{
+    position: absolute;
+    text-align: center;
+    left:50%;
+    top:75%;
+    bottom: 100%;
+    width: 80%;
+    height: 10%;
+    transform: translate(-50%,-50%);
+}
+
+#result{
+    font-size: 20px;
+}
+
+
+.responsive-iframe{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 60%;
+}
+
+
+
+
+@media only screen and (max-width: 855px) {
+
+    .top-text{
+        flex-direction: column;
+    }
+
+    .top-text-middle-line{
+        transform: rotate(90deg);
+        height: 40px;
+        width: 0%;
+
+    }
+
+    .top-nav{
+        width: 80px;
+        flex-direction: column;
+
+    }
+
+    span.title{
+        display:none;   
+
+    }
+
+    .nav-links{
+        justify-content: space-between;
+    }
+
+    .top-nav .nav-links .nav-item a{
+        padding: 3em 0;
+    }
+
+    .fa-fw{
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .logo-text{
+        font-size: 12px;
+
+    }
+
+    .Home-Title{
+        font-size: 30px;
+    }
+
+    .Home-Quote{
+        font-size: 20px;
+    }
+
+    .Home-Body-Text{
+        font-size: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .top-nav .nav-links .nav-item a{
+        padding: 3em 0; //adjust these padding values for proper nav bar responsiv
+    }
+    .button{
+        padding: 10px 50px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+    
+
+}
+
+@media only screen and (max-width: 415px) {
+    .tabs{
+        height: 63vh;
+    }
+
+    #acronymBoxContainer{
+        padding-top: 20px;
+    }
+
+    .timer-rectangle{
+        width: 80%;
+        height: 25%;
+        margin: 15px 2px;
+        border-radius: 0px;
+    }
+
+    .timer-rectangle div{
+        font-size: 7.7vw;
+        //font-size: 10.2vw;
+        width: 55%;
+        margin-bottom: 30px;
+    }
+
+    .timer-rectangle div:before{
+        bottom: 30%;
+        font-size: 2.1vw;
+        width: 17.5%;
+        //font-size: 2.3vw;
+        //width: 20.5%;
+    }
+
+    .timer-buttons{
+        bottom: 10%;
+    }
+
+    .start-button{
+        font-size:12px;
+        width: 100%;
+    }
+
+    .reset-button{
+        font-size:12px;
+        width: 100%;
+    }
+
+    .stop-button{
+        font-size:12px;
+        width: 100%;
+    }
+
+    .timer-rectangle2{
+        left: 35%;
+        border-radius: 0px;
+    }
+
+    .timer-rectangle2 div{
+        font-size: 10.8vw;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+
+    .timer-rectangle2 div.minutes2:before{
+        content: none;
+    }
+    .timer-rectangle2 div.minutes2:after{
+        content: none;
+    }
+
+    .timer2-buttons{
+        width: 96%;
+        bottom: 8%;
+        left: 2%;
+
+    }
+
+    .start2-button{
+        font-size:12px;
+        width: 100%;
+        padding: 8px;
+        height: 50px;
+    }
+
+    .reset2-button{
+        font-size:12px;
+        width: 100%;
+        padding: 8px;
+        height: 50px;
+    }
+
+    .stop2-button{
+        font-size:12px;
+        width: 100%;
+        padding: 8px;
+        height: 50px;
+    }
+
+    .pomodoro-togglemode{
+        top: 40%;
+        left: 79%;
+    }
+
+    #workBtn{
+        width: 60px;
+        padding: 10px 10px;
+        font-size: 10px;
+        border-radius: 0px;
+    }
+
+    #shortBreakBtn{
+        width: 60px;
+        padding: 10px 10px;
+        font-size: 10px;
+        border-radius: 0px;
+    }
+
+
+    #longBreakBtn{
+        width: 60px;
+        padding: 10px 10px;
+        font-size: 10px;
+        border-radius: 0px;
+    }
+
+    #acronymBoxContainer{
+        width: 95%;
+    }
+
+    .acronym-title{
+        font-size: 20px;
+        margin: auto;
+        margin-right: 25px;
+    }
+
+
+
+    .top-text {
+        margin-bottom: -10px;
+      }
+      .top-text-title {
+        width: auto;
+        float: left;
+        /* width: 50%; */
+        text-align: center;
+        font-size: 2.17vw;
+      }
+
+      .top-text-middle-line {
+        border-left: 6px solid black;
+        margin: 0 auto;
+        width: auto;
+        height: 6.63vh;
+        text-align: center;
+      }
+      /*     background: linear-gradient(#000, #000) no-repeat center/6px 100%; */
+      .top-text-paragraph {
+        float: right;
+        font-size: 2vw;
+        /* width: 2%; */
+        /* flex-wrap: nowrap; */
+        text-align: center;
+        width: auto;
+      }
+
+      .sub-nav .nav-links .nav-item a {
+        padding: 6.5em 2.965em;
+        font-size: 1.83vw;
+
+      }
+      .acronym-text {
+          margin: auto;
+      }
+      #result{
+          display:none;
+      }
+      #inputField {
+        padding-left: 10px;
+        font-size: 20px;
+      }
+
+      #generate {
+        width: 40%;
+        padding-left: 5px;
+        font-size: 2.953125vw;
+      }
+}
+
+/*
+@media only screen and (max-height: 812px){
+    #myKanban{
+        height: 300px;
+    }
+}
+*/
+
+@media only screen and (max-width: 380px) {
+    .timer-rectangle div{
+        font-size: 6.2vw;
+    }
+    .top-nav .nav-links .nav-item a{
+        padding: 2.8em 0; 
+    }
+
+    .task-list-boxes{
+        min-width: 200px;
+    }
+
+    .acronym-text{
+        font-size: 13px;
+    }
+
+    .acronym-title{
+        font-size: 13px;
+    }
+    
+    #myKanban{
+        width: 90%;
+        height: 210px;
+    }
+    .taskDescription{
+        font-size: 4.5vw;
+    }
+    #emptylist{
+        font-size: 4vw;
+    }
+
+}
+
+@media only screen and (max-width: 376px){
+    .sub-nav .nav-links .nav-item a{
+        padding: 6.5em 1.965em;
+    }
+}
+
+
+
+@media only screen and (max-width: 361px), (max-height: 568px) { //max width: 340px;
+    #myKanban{
+        height: 165px;
+    }
+    .acronym-title{
+        font-size: 13px;
+    }
+
+    #acronymBoxContainer{
+        padding-top: 10px;
+    }
+
+    #acronymBoxContainer div{
+        height: 150px;
+    }
+
+    .acronym-text{
+        font-size: 9.5px;
+        text-align: left;
+    }
+
+    .acronym-bottom-text{
+        font-size: 9px;
+        top: 80%;
+    }
+    .top-nav .nav-links .nav-item a{
+        padding: 2.2em 0;
+    }
+    .Home-Title{
+        font-size: 25px;
+    }
+
+    .Home-Quote{
+        font-size: 16px;
+    }
+
+    .Home-Body-Text{
+        font-size: 9px;
+    }
+
+    .start-button, .reset-button, .stop-button{
+        height: 50px;
+        padding: 10px;
+        border-radius: 0px;
+    }
+
+    .timer-rectangle2{
+        left: 30%;
+        top: 35.5%;
+        width: 40%;
+    }
+    
+    .timer-rectangle2 div{
+        font-size: 9vw;
+    }
+    
+    .pomodoro-togglemode{
+        top: 35%;
+        left: 76%;
+        margin-top: 49px;
+    }
+
+    .timer2-buttons{
+        bottom: 9%;
+    }
+
+    #workBtn, #shortBreakBtn, #longBreakBtn{
+        margin-bottom: 0px;
+        width: 50px;
+    }
+
+    .start2-button, .reset2-button, .stop2-button{
+        border-radius: 0px;
+
+    }
+    
+    .setting-Button{
+        bottom: -5%;
+    }
+    
+
+
+}
+
+@media only screen and (max-width: 321px) {
+    .sub-nav .nav-links .nav-item a{
+        padding: 6.5em 0.965em;
+    }
+    #musicTitle{
+        font-size: 25px;
+    }
+
+}
+
+/*
+    NOTE: Have a way to distinguish nav icons with nav text - in order to properly allow use of display: none; for mobile devices
+*/

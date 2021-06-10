@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  }
+
+.app-container {
+  background-image: url(../img/Background.png);
+  font-family: 'Poppins', sans-serif;
+  padding-left: 120px;
+}
+
+.page-container{
+  margin: 3.5em;
+
+  &#home{
+    text-align: center;
+  }
+
+  &:not(#home){
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 855px) {
+  .app-container{
+      padding-left: 50px;
+  }
+}
+
+@media only screen and (max-height: 568px) {
+  .tabs{
+    height: 60vh;
+  }
+  .sub-nav .nav-links .nav-item a{
+    padding: 4.5em 0.2em;
+    font-size: 7px;
+    // padding: 4.5em 0.6em;
+    //font-size: 7px;
+  } 
+}
+
+
+
